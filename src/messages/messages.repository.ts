@@ -1,5 +1,8 @@
+import { Injectable } from '@nestjs/common';
 import { readFile, writeFile } from 'fs/promises';
 
+
+@Injectable()
 export class MessagesRepository {
   private messages = readFile('messages.json', 'utf8')
     .then((data) => JSON.parse(data))

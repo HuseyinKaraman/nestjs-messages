@@ -5,13 +5,7 @@ import { MessagesService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
-  messagesService: MessagesService;
-
-  constructor() {
-    // DONT DO THIS IN REAL APPS!
-    // USE DEPENDENCY INJECTION INSTEAD   
-    this.messagesService = new MessagesService();
-  }
+  constructor(private messagesService: MessagesService) {}
   
   @Get()
   listMessages() {
